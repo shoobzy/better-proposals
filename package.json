@@ -14,6 +14,7 @@
     "// LINTING //": "",
     "lint:css": "stylelint public/css"
   },
+  "heroku-run-build-script": true,
   "dependencies": {
     "autoprefixer": "^9.5.1",
     "tailwindcss": "^1.0",
