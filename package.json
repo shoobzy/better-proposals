@@ -12,9 +12,9 @@
     "build": "postcss public/css/tailwind.css -o public/build/style.css",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "// LINTING //": "",
-    "lint:css": "stylelint public/css"
+    "lint:css": "stylelint public/css",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
-  "heroku-run-build-script": true,
   "dependencies": {
     "autoprefixer": "^9.5.1",
     "tailwindcss": "^1.0",
@@ -31,5 +31,6 @@
     "stylelint": "^10.0.1",
     "stylelint-cli": "^1.1.0",
     "stylelint-config-recommended": "^2.2.0"
-  }
+  },
+  "heroku-run-build-script": true
 }
