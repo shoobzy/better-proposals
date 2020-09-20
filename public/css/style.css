@@ -1,0 +1,321 @@
+/* @todo Implement SCSS and refactor this */
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    @apply relative pb-24;
+}
+
+.hero {
+    max-height: 736px;
+    background: url("../images/hero-bg.svg") center top no-repeat;
+    background-size: cover;
+}
+
+@screen sm {
+    section {
+        @apply pb-32;
+    }
+}
+
+.wrapper {
+    @apply relative max-w-6xl mx-auto pr-12 pl-12;
+}
+
+@screen lg {
+    .wrapper {
+        @apply pr-10 pl-10;
+    }
+}
+
+@screen xl {
+    .wrapper {
+        @apply pr-8 pl-8;
+    }
+}
+
+.section-number {
+    @apply absolute font-mono font-semibold leading-none pointer-events-none text-12xl text-indianred-200 -mt-10 z-0;
+}
+
+@screen md {
+    .section-number {
+        @apply text-18xl;
+    }
+}
+
+@screen lg {
+    .section-number {
+        @apply text-24xl;
+    }
+}
+
+@screen xl {
+    .section-number {
+        @apply text-48xl -mt-40;
+    }
+}
+
+/* 45 degree squares */
+.square-45deg {
+    position: absolute;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+.square-45deg-xl {
+    width: 64rem;
+    height: 64rem;
+    border-radius: 30px;
+}
+
+.square-45deg-l {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 20px;
+}
+
+.square-45deg-m {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 15px;
+}
+
+.square-45deg-sm {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 10px;
+}
+
+.square-45deg-pos-1 {
+    top: -1000px;
+    left: -400px;
+}
+
+@media (min-width: 1692px) {
+    .square-45deg-pos-1 {
+        top: -900px;
+    }
+}
+
+.square-45deg-pos-2 {
+    top: -12rem;
+    right: -32rem;
+}
+
+@screen md {
+    .square-45deg-pos-2 {
+        right: -20rem;
+    }
+}
+
+.square-45deg-pos-3 {
+    top: 14rem;
+    right: 28rem;
+}
+
+.square-45deg-pos-4 {
+    top: 26rem;
+    right: 16rem;
+}
+
+.diffused-shadow-xl-indianred-300 {
+    box-shadow: 30px 30px 80px 0 #F8B4C4;
+}
+
+.diffused-shadow-xl-mediumorchid-300 {
+    box-shadow: 30px 30px 80px 0 #f2aeeb;
+}
+
+.diffused-shadow-xl-royalblue-300 {
+    box-shadow: 30px 30px 80px 0 #adc9f5;
+}
+
+.diffused-shadow-l-royalblue-300 {
+    box-shadow: 15px 15px 80px 0 #adc9f5;
+}
+
+.background-curve {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+}
+
+.note {
+    @apply bg-royalblue-700 font-medium mt-4 px-8 py-3 rounded-full text-indianred-500 text-white leading-relaxed text-base;
+}
+
+@screen sm {
+    .note {
+        @apply text-lg;
+    }
+}
+
+.counter {
+    @apply self-center w-24 h-24 p-2;
+    position: relative;
+    display: flex;
+    border-radius: 15px;
+}
+
+@screen sm {
+    .counter {
+        @apply w-32 h-32 p-3;
+    }
+}
+
+@screen md {
+    .counter {
+        @apply w-48 h-48 p-4;
+    }
+}
+
+@screen lg {
+    .counter {
+        @apply w-64 h-64 p-6;
+    }
+}
+
+.counter-text {
+    @apply flex flex-1 flex-col justify-center;
+    transform: rotate(-45deg);
+}
+
+.percentage {
+    @apply text-4xl font-mono text-white font-semibold block text-center;
+}
+
+.device {
+    @apply text-base font-sans font-bold leading-tight text-white text-center block;
+}
+
+.clock {
+    @apply w-1/2 top-0 left-0 ml-auto mr-auto;
+    max-width: 40rem;
+    background: #FFFFFF;
+    box-shadow: -20px 60px 120px 0 rgba(176,188,207,0.90), inset 20px -40px 70px 0 rgba(180,198,213,0.41), inset 10px -50px 50px 0 rgba(188,188,212,0.61), inset 20px -50px 50px 0 rgba(13,199,139,0.05);
+    border-radius: 100%;
+}
+
+@screen md {
+    .clock {
+        @apply absolute w-2/6 m-24 mt-10;
+        box-shadow: -20px 120px 120px 0 rgba(176,188,207,0.90), inset 20px -40px 70px 0 rgba(180,198,213,0.41), inset 10px -50px 50px 0 rgba(188,188,212,0.61), inset 20px -50px 50px 0 rgba(13,199,139,0.05);
+    }
+}
+
+.observed .minutes {
+    animation: spin-minutes 4s cubic-bezier(0.3, 0.92, 0.71, 0.99);
+    animation-delay: 1s;
+    transform: rotate(120deg);
+}
+
+.observed .hours {
+    animation: spin 4s cubic-bezier(0.26, 0.96, 0.8, 0.94) 1;
+    animation-delay: 1s;
+}
+
+@keyframes spin-minutes {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(2280deg);
+    }
+}
+
+.transitionable {
+    @apply transform ease-in-out duration-700 delay-700;
+}
+
+.fadeInUp {
+    @apply translate-y-24 opacity-0;
+}
+
+p,
+ul,
+.btn {
+    @apply text-base text-darker-grey font-sans font-normal leading-relaxed mb-8;
+}
+
+.btn {
+    @apply inline-block bg-indianred-500 text-white text-center font-bold mb-0 py-2 px-8 duration-300 rounded-full;
+}
+
+.btn:hover {
+    @apply bg-mediumorchid-500;
+}
+
+h2 {
+    @apply text-4xl text-darker-grey font-sans font-bold leading-tight mb-8;
+}
+
+h3 {
+    @apply text-3xl text-darker-grey font-sans font-bold leading-tight mb-8;
+}
+
+h4 {
+    @apply text-2xl text-darker-grey font-sans font-semibold leading-tight mb-4;
+}
+
+@screen sm {
+    p,
+    ul,
+    .btn {
+        @apply text-lg leading-loose;
+    }
+}
+
+@screen md {
+    h2 {
+        @apply text-5xl;
+        @apply mb-16;
+    }
+
+    h3 {
+        @apply text-4xl;
+    }
+
+    h4 {
+        @apply text-3xl;
+    }
+
+    .percentage {
+        @apply text-6xl;
+    }
+
+    .device {
+        @apply text-3xl;
+    }
+}
+
+@screen lg {
+    p,
+    ul,
+    .btn {
+        @apply text-xl;
+    }
+
+    h2 {
+        @apply text-6xl;
+    }
+
+    h3 {
+        @apply text-5xl;
+    }
+
+    h4 {
+        @apply text-4xl;
+    }
+
+    .percentage {
+        @apply text-8xl;
+    }
+
+    .device {
+        @apply text-4xl;
+    }
+}
